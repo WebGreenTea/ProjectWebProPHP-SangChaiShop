@@ -1,0 +1,619 @@
+* {
+    margin: 0;
+    padding: 0;
+    
+}
+
+body {
+    background-color: #eee;
+    zoom: 90%;
+}
+
+a:hover {
+    background-color: #b6b6b6;
+}
+
+.topbar {
+    width: 100%;
+    height: 70px;
+    background-color: wheat;
+}
+
+.topbarli {
+    list-style: none;
+    line-height: 70px;
+    float: right;
+    font-family: tahoma;
+    margin: 0px 5px 0px 0px;
+}
+.topbarli2 {
+    list-style: none;
+    line-height: 35px;
+    float: right;
+    font-family: tahoma;
+    margin: 20px 25px 0px 0px;
+    font-size: 18px;
+    
+}
+.topbarli2:hover .ulsubtopbtn{
+    display: block;
+}
+.usermenu{
+    background-color: white;
+    padding: 5px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #000;
+}
+.subtopbarli {
+    list-style: none;
+    line-height: 10px;
+    width: 200px;
+    float: left;
+    font-family: tahoma;
+    margin: 0px 0px 0px 0px;
+}
+.ulsubtopbtn{
+    display: none;
+    position: absolute;
+    margin: 0;
+}
+
+#logo {
+    float: left;
+    padding: 5px;
+    font-family: tahoma;
+    color: white;
+    stroke: black;
+    font-weight: 600;
+    font-size: 60px;
+}
+
+.btnsign {
+    background-color: aliceblue;
+    border-radius: 10px 10px 10px 10px;
+    font-family: tahoma;
+    padding: 10px 12px 10px 12px;
+    margin: 0px 15px 0px 0px;
+    text-decoration: none;
+}
+.subbtnsign{
+    position: relative;
+    display: block;
+    background-color: aliceblue;
+    font-family: tahoma;
+    padding: 10px 12px 10px 12px;
+    margin: 0px 5px 0px 0px;
+    text-decoration: none;
+    z-index: 999;
+    color: #000;
+}
+
+.coverfram {
+    width: 100%;
+    height: 280px;
+    border: 0px solid blue;
+    overflow: hidden;
+}
+
+.coverpic {}
+
+.topmenu {
+    width: 100%;
+    height: 50px;
+    background-color: #FFBABA;
+}
+
+.topmenuin {
+    border: 0px solid black;
+    height: 49px;
+    width: 605px;
+    margin: 0 auto;
+    position: relative;
+    padding: 3px 0px 0px 0px;
+}
+
+.topmenuli {
+    list-style: none;
+    line-height: 46px;
+    float: left;
+    font-family: tahoma;
+    margin: 0px 5px 0px 5px;
+}
+
+.btnmenu {
+    background-color: #FFE8E8;
+    color: black;
+    border-radius: 5px;
+    padding: 12px 18px 12px 18px;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.countcart {
+    position: absolute;
+    left: 580px;
+    top: 5px;
+    color: red;
+    font-family: tahoma;
+    background-color: yellow;
+    border-radius: 5px;
+    padding: 1px;
+}
+
+#cart {
+    font-size: 14px;
+}
+
+.btnmenu:hover {
+    background-color: #cca1a1;
+}
+
+.category {
+    width: 170px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: #CCFFFF;
+    margin: 0;
+    padding: 0;
+}
+
+.typeproduct {
+    border-radius: 5px;
+    background-color: #FFBABA;
+    margin: 5px 10px 5px 30px;
+    padding: 2px;
+}
+
+.brandproduct {
+    border-radius: 5px;
+    background-color: #FFE8E8;
+    list-style: inside circle;
+    margin: 5px 10px 5px 30px;
+    padding: 0px 0px 0px 5px;
+}
+
+.mainDiv {
+    position: absolute;
+    border: 0px solid blue;
+    width: 100%;
+    height: auto;
+}
+
+.menuleftDiv {
+    color: #000;
+    float: left;
+}
+
+.PDrightDiv {
+    position: absolute;
+    left: 174px;
+    background-color: #efefef;
+    border: 0px solid blue;
+    color: #000;
+    height: auto;
+    width: 100%;
+    width: -webkit-calc(100% - 170px);
+    width: -moz-calc(100% - 170px);
+    width: calc(100% - 180px);
+    padding: 0px 0px 0px 0px;
+}
+
+.product {
+    border-radius: 10px;
+    width: 290px;
+    height: 370px;
+    float: left;
+    margin: 10px 0px 0px 10px;
+    text-align: center;
+    background-color: #FFE5CC;
+}
+
+.PDname {
+    font-family: tahoma;
+    color: blue;
+    font-size: 20px;
+    margin: 0px 0px 0px 0px;
+}
+
+.PDprice {
+    color: red;
+    font-family: tahoma;
+    font-weight: bold;
+    font-size: 22px;
+    margin: 0px 0px 0px 0px;
+}
+
+.frampic {
+    position: relative;
+    width: 280px;
+    height: 230px;
+    display: inline-block;
+    margin: 5px auto 0px auto;
+    overflow: hidden;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.PDpic {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    height: auto;
+    width: 210px;
+}
+
+.PDbtn {
+    list-style: none;
+    line-height: 70px;
+    display: inline;
+}
+
+.buybtn {
+    background-color: salmon;
+    border-radius: 10px 10px 10px 10px;
+    font-family: tahoma;
+    font-size: 16px;
+    padding: 10px 12px 10px 12px;
+    margin: 0px 10px 0px 0px;
+    text-decoration: none;
+    color: antiquewhite;
+    border: none;
+}
+
+.buybtn:hover {
+    background-color: #ffb187;
+}
+
+.infobtn {
+    background-color: #c0c0c0;
+    border-radius: 10px 10px 10px 10px;
+    font-family: tahoma;
+    padding: 10px 12px 10px 12px;
+    margin: 0px 10px 0px 0px;
+    text-decoration: none;
+    color: gray;
+}
+
+.aboutdiv {
+    background-color: wheat;
+    height: auto;
+    padding: 70px 70px 70px 160px;
+}
+
+.pabout {
+    font-size: 25px;
+    font-weight: 400;
+    font-family: tahoma;
+}
+
+.pabout2 {
+    margin: 0px 0px 100px 50px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    width: 500px;
+}
+
+.pabout3 {
+    margin: 0px 0px 100px 50px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    width: auto;
+}
+
+.divMaininfo {
+    background-color: wheat;
+    width: 100%;
+    width: -webkit-calc(100% - 170px);
+    width: -moz-calc(100% - 170px);
+    width: calc(100% - 300px);
+    height: 1400px;
+    border: red solid 0px;
+    padding: 100px 100px 50px 200px;
+}
+
+.infopage {
+    position: absolute;
+    border: blue solid 0px;
+    width: 1300px;
+    height: 1200px;
+}
+
+.Fpicinfo {
+    position: relative;
+    width: 560px;
+    height: 460px;
+    display: inline-block;
+    overflow: hidden;
+    background-color: white;
+    border-radius: 10px;
+    float: left;
+}
+
+.PDpicinfo {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border: black solid 0px;
+    margin: auto;
+    height: auto;
+    width: 420px;
+}
+
+.nameprice {
+    border: green solid 0px;
+    width: 560px;
+    height: 460px;
+    margin: 0px 0px 0px 50px;
+    float: left;
+    text-align: center;
+}
+
+.namepriceIN {
+    border: 0px solid black;
+    margin: 100px 0px 100px 50px;
+    text-align: left;
+    width: 500px;
+}
+
+.infotxt {
+    float: left;
+    background-color: white;
+    border: red 0px solid;
+    border-radius: 20px;
+    width: 100%;
+    height: 700px;
+    margin: 30px 0px 0px 0px;
+}
+
+.buybtninfo {
+    background-color: salmon;
+    border-radius: 10px 10px 10px 10px;
+    font-family: tahoma;
+    font-size: 27px;
+    padding: 10px 12px 10px 12px;
+    margin: 0px 10px 0px 0px;
+    text-decoration: none;
+    color: antiquewhite;
+    border: none;
+}
+
+.PDnameinfo {
+    font-family: tahoma;
+    color: blue;
+    font-size: 35px;
+}
+
+.PDpriceinfo {
+    color: red;
+    font-family: tahoma;
+    font-weight: bold;
+    font-size: 30px;
+    margin: 0px 0px 0px 0px;
+}
+
+.outcartdiv {
+    margin: 50px;
+    border: green 0px solid;
+    background-color: wheat;
+    border-radius: 10px;
+}
+
+.listcartdiv {
+    position: relative;
+    border: red 2px solid;
+    width: 90%;
+    height: 50px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.columcart {
+    padding: 0;
+    margin: 0;
+    background-color: #CCFFFF;
+    font-family: tahoma;
+    border: gray 1px solid;
+    border-bottom: none;
+    border-top: none;
+    float: left;
+    text-align: center;
+    height: 40px;
+}
+
+table {
+    font-family: tahoma;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: wheat;
+    /*border: 1px solid black;*/
+}
+.tablehead{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid  rgb(134, 134, 134);
+    /*border: 1px solid black;*/
+}
+td{
+   border-bottom: 1px rgb(134, 134, 134) solid;
+   /*border: 1px solid black;*/
+    text-align: center;
+    vertical-align: middle;
+}
+.picincart{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    height: auto;
+    width: 50%;
+}
+.frampiccart {
+    position: relative;
+    width: 140px;
+    height: 115px;
+    display: inline-block;
+    margin: 5px auto 0px auto;
+    overflow: hidden;
+    background-color: white;
+    border-radius: 10px;
+    float: left;
+}
+.framnamecart{
+    position: relative;
+    display: inline-block;
+    margin: 50px auto 0px auto;
+    
+    
+}
+.PDnamecart{
+    font-family: tahoma;
+    color: blue;
+    font-size: 20px;
+}
+.delcart{
+    background-color: #b6b6b6;
+    padding: 10px;
+    border-radius: 10px;
+    color: black;
+    border: none;
+}
+.countincart{
+    width: 70px;
+    height: 25px;
+    text-align: center;
+}
+.PDpricecart{
+    color: #FF6666;
+    font-family: tahoma;
+    font-weight: bold;
+    font-size: 18px;
+    margin: 0px 0px 0px 0px;
+}
+.pricesum{
+    color: #ee4d2d;
+    font-family: tahoma;
+    font-weight: bold;
+    font-size: 18px;
+    margin: 0px 0px 0px 0px;
+}
+.emcart{
+    display: table;
+    margin: 0 auto;
+    padding: 300px 0px 300px 0px;
+}
+.emcartP{
+    font-size: 70px;
+    color: #c0c0c0;
+    font-family: tahoma;
+}
+.chekbox{
+    margin: 20px;
+    width: 22px;
+    height: 22px;
+    
+}
+.buyorderdiv{
+    display: table;
+    margin: 0px auto 0px;
+    padding: 0px 0px 50px 0px;
+
+}
+.buyorderbtn{
+    background-color: #FF6666;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    font-family: tahoma;
+    font-size: 20px;
+    
+}
+.sumorderdiv{
+    display: table;
+    margin: 50px auto;
+}
+.sumorder{
+    color: #FF6666;
+    font-family: tahoma;
+    font-weight: bold;
+    font-size: 30px;
+}
+#txt1{
+    font-size: 20px;
+    font-family: tahoma;
+}
+.frampiccartCO {
+    position: relative;
+    width: 93px;
+    height: 76px;
+    display: inline-block;
+    margin: 5px auto 0px auto;
+    overflow: hidden;
+    background-color: white;
+    border-radius: 10px;
+    float: left;
+}
+.framnamecartCO{
+    position: relative;
+    display: inline-block;
+    margin: 20px auto 0px auto;
+    
+    
+}
+.Uaddress{
+    border: 0px blue solid;
+    margin: 0 auto;
+    width: 900px;
+    padding: 50px 0px 50px 0px;
+    background-color: wheat;
+}
+.smuprice{
+    color: red;
+    font-family: tahoma;
+    font-size: 20px;
+    font-weight: bold;
+}
+.H{
+    font-family: tahoma;
+    font-weight: bold;
+    font-size: 20px;
+}
+.addressarea{
+    position: relative;
+    display: inline-block;
+    float: left;
+    border: black 0px solid;
+    width: 80%;
+}
+.editadddiv{
+    position: relative;
+    display: inline-block;
+    border: black 0px solid;
+    width: 15%;
+    height: 70px;
+    padding: 20px 0px 0px 0px;
+}
+.btninorder{
+    margin: 10px 0px 0px 0px;
+    width: 80px;
+}
+.submitorder{
+    background-color: #FF6666;
+    font-family: tahoma;
+    font-size: 18px;
+    padding: 10px 5px 10px 5px;
+    border-radius: 10px;
+}
+.pichowto{
+    border: 2px white solid;
+}

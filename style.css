@@ -1,0 +1,60 @@
+.bg-overlay {
+    background: url("https://drive.google.com/uc?export=view&id=1MFRKbTq2kO4LrOd8ddW-sptLVKIcyDie");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    color: #fff;
+    height: 300px;
+    padding-top: 50px;
+  }
+  .card:hover {
+    background-color: #17a2b8;
+    color: #fff;
+  }
+  .frampic {
+    position: relative;
+    width: 100%;
+    height: 240px;
+    display: inline-block;
+    margin: 5px auto 0px auto;
+    overflow: hidden;
+    background-color: white;
+    border-radius: 10px;
+}
+.PDpic {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  height: auto;
+  width: 210px;
+}
+.tablehead{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid  rgb(134, 134, 134);
+  /*border: 1px solid black;*/
+}
+.frampiccart {
+  position: relative;
+  width: 140px;
+  height: 115px;
+  display: inline-block;
+  margin: 5px auto 0px auto;
+  overflow: hidden;
+  background-color: white;
+  border-radius: 10px;
+  float: left;
+}
+.picincart{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  height: auto;
+  width: 50%;
+}
