@@ -63,7 +63,7 @@ if (!isset($_SESSION['username'])) {
 
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                         <li><a class="dropdown-item" href="userinfo/myaccount.php">บัญชีของฉัน</a></li>
-                        <li><a class="dropdown-item" href="vieworder/my_order.php">ประวัติการสั่งซื้อ</a></li>
+                        <li><a class="dropdown-item" href="order_history.php">ประวัติการสั่งซื้อ</a></li>
                         <li><a class="dropdown-item" href="index.php?logout='1'">Logout</a></li>
                     </ul>
                 </div>
