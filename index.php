@@ -77,6 +77,9 @@ if ((isset($_GET['type'])) && (isset($_GET['brand']))) {
                             <li><a class="dropdown-item" href="order_history.php">ประวัติการสั่งซื้อ</a></li>
                             <li><a class="dropdown-item" href="myaccountinfo.php">ตั้งค่าข้อมูลส่วนตัว</a></li>
                             <li><a class="dropdown-item" href="changePassPage.php">เปลี่ยนรหัสผ่าน</a></li>
+                            <?php if (isset($_SESSION['identity']) && $_SESSION['identity'] == "admin") : ?>
+                                <li><a class="dropdown-item" href="adminPage/adminPage.php">เมนู ADMIN</a></li>
+                            <?php endif ?>
                             <li><a class="dropdown-item" href="index.php?logout='1'">Logout</a></li>
                         </ul>
                     </div>
@@ -96,7 +99,7 @@ if ((isset($_GET['type'])) && (isset($_GET['brand']))) {
             <!--</div>-->
         </div>
     </nav>
-    
+
     <div class="container-fulid bg-overlay">
         <div class="text-center">
             <h1 class="text-info" style="font-size: 80px;">Sangchai SHOP </h1>
@@ -251,7 +254,7 @@ if ((isset($_GET['type'])) && (isset($_GET['brand']))) {
                         <div class="card-body">
                             <h6 class=" d-flex justify-content-center card-title"><?php echo $rowPD['PDname'] ?></h6>
                             <h5 class=" d-flex justify-content-center card-text"><?php echo number_format($rowPD['price']); ?> บาท</h5>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -265,8 +268,8 @@ if ((isset($_GET['type'])) && (isset($_GET['brand']))) {
 
 </body>
 <script>
-    function goProductDetail(id){
-        window.location.assign('ProductDetail.php?productID='+id)
+    function goProductDetail(id) {
+        window.location.assign('ProductDetail.php?productID=' + id)
     }
 </script>
 

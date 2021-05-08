@@ -13,12 +13,13 @@ if (isset($_POST['userlogin'])) {
     $result = mysqli_query($conect, $SQL);
 
     if (mysqli_num_rows($result) == 1) {
-        $sql = "SELECT userid FROM user_data WHERE username = '$username'";
+        $sql = "SELECT userid,identity FROM user_data WHERE username = '$username'";
         $query = mysqli_query($conect, $sql);
-        $userid = mysqli_fetch_array($query);
+        $userdata = mysqli_fetch_array($query);
 
         $_SESSION['username'] = $username;
-        $_SESSION['userid'] = $userid['userid'];
+        $_SESSION['userid'] = $userdata['userid'];
+        $_SESSION['identity'] = $userdata['identity'];
         header('location: index.php');
     } else {
         $_SESSION['error'] = "Username หรือ รหัสผ่านไม่ถูกต้อง";
