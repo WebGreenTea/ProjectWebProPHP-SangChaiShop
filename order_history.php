@@ -5,7 +5,13 @@ if (!isset($_SESSION['userid'])) {
     header('location: index.php');
 }
 $userid = $_SESSION['userid'];
-$sql = "SELECT * FROM `sell` WHERE `userid`=$userid ORDER BY `sellid` DESC";
+ if (isset($_GET['oldFirst'])) {
+    $sql = "SELECT * FROM `sell` WHERE `userid`=$userid ORDER BY `sellid`";
+ }
+else{
+    $sql = "SELECT * FROM `sell` WHERE `userid`=$userid ORDER BY `sellid` DESC";
+}
+
 $resultsell =  mysqli_query($conect, $sql);
 $rowofsell = mysqli_fetch_array($resultsell);
 ?>
@@ -60,7 +66,7 @@ $rowofsell = mysqli_fetch_array($resultsell);
                     </a>
 
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <li><a class="dropdown-item" href="userinfo/myaccount.php">บัญชีของฉัน</a></li>
+                        <li><a class="dropdown-item" href="myaccountinfo.php">ตั้งค่าข้อมูลส่วนตัว</a></li>
                         <li><a class="dropdown-item" href="index.php?logout='1'">Logout</a></li>
                     </ul>
                 </div>
@@ -71,21 +77,113 @@ $rowofsell = mysqli_fetch_array($resultsell);
         </div>
     </nav>
     <div class="container mt-5">
-        <div class="d-flex justify-content-center">
+        <div class="d-flex justify-content-center mb-3">
             <h2>ประวัติการสั่งซื้อของฉัน</h2>
         </div>
+        เรียงจาก: 
+        <?php if (isset($_GET['oldFirst'])) : ?>
+            <a href="order_history.php" class="btn btn-dark">ล่าสุด-เก่าสุด</a>
+            <a href="order_history.php?oldFirst=1" class="btn btn-secondary">เก่าสุด-ล่าสุด</a>
+        <?php else : ?>
+            <a href="order_history.php" class="btn btn-secondary">ล่าสุด-เก่าสุด</a>
+            <a href="order_history.php?oldFirst=1" class="btn btn-dark">เก่าสุด-ล่าสุด</a>
+        <?php endif ?>
         <div>
             <?php if ($rowofsell) : //ถ้ามีประวัติการซื้อ
             ?>
                 <?php do { ?>
                     <?php $sellid = $rowofsell['sellid'] ?>
-                    <?php $sql = "SELECT * FROM  `sellinfo` WHERE `sellid`=$sellid";
+                    <?php $sql = "SELECT *,price*count  AS total FROM  `sellinfo` WHERE `sellid`=$sellid";
                     $resulsellinfo = mysqli_query($conect, $sql);
                     ?>
+                    <div class="row">
+                        <div class="col-md-12 mt-5">
+                            วันที่สั่ง : <?php echo $rowofsell['date'] ?>
+                        </div>
+                    </div>
+                    <?php if ($rowofsell['status'] == "กำลังดำเนินการ") : ?>
+                        <div class="row bg-warning">
+                            <div class="col-md-5 d-flex justify-content-center border">
+                                ชื่อสินค้า
+                            </div>
+                            <div class="col-md-2 d-flex justify-content-center border">
+                                ราคาต่อชิ้น
+                            </div>
+                            <div class="col-md-2 d-flex justify-content-center border">
+                                จำนวนที่สั่งซื้อ
+                            </div>
+                            <div class="col-md-3 d-flex justify-content-center border">
+                                ราคารวม
+                            </div>
+                        </div>
+                    <?php else : ?>
+                        <div class="row bg-success text-light">
+                            <div class="col-md-5 d-flex justify-content-center border">
+                                ชื่อสินค้า
+                            </div>
+                            <div class="col-md-2 d-flex justify-content-center border">
+                                ราคาต่อชิ้น
+                            </div>
+                            <div class="col-md-2 d-flex justify-content-center border">
+                                จำนวนที่สั่งซื้อ
+                            </div>
+                            <div class="col-md-3 d-flex justify-content-center border">
+                                ราคารวม
+                            </div>
+                        </div>
+                    <?php endif ?>
+                    <?php $total = 0; ?>
+                    <?php while ($rowsellinfo = mysqli_fetch_array($resulsellinfo)) {
+                    ?>
+                        <?php
+                        $PDID = $rowsellinfo['pdid'];
+                        $sql = "SELECT PDname FROM `product` WHERE productid=$PDID";
+                        $productName = mysqli_query($conect, $sql);
+                        $productName = mysqli_fetch_array($productName)['PDname'];
+                        ?>
+                        <div class="row">
+                            <div class="col-md-5 d-flex justify-content-center border">
+                                <?php echo $productName; ?>
+                            </div>
+                            <div class="col-md-2 d-flex justify-content-center border">
+                                <?php echo number_format($rowsellinfo['price']); ?>
+                            </div>
+                            <div class="col-md-2 d-flex justify-content-center border">
+                                <?php echo $rowsellinfo['count'] ?>
+                            </div>
+                            <div class="col-md-3 d-flex justify-content-center border">
+                                <?php echo number_format($rowsellinfo['total']); ?>
+                                <?php $total += $rowsellinfo['total']; ?>
+                            </div>
+                        </div>
+                    <?php } ?>
+                    <div class="row">
+                        <div class="col-md-9 d-flex justify-content-end p-1 border">
+                            <h6>ราคารวมทั้งสิ้น:</h6>
+                        </div>
+                        <div class="col-md-3 d-flex justify-content-center border align-items-center">
+                            <?php echo number_format($total) ?>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-9 d-flex justify-content-end p-1 border">
+                            <h6>สถานะ:</h6>
+                        </div>
+                        <div class="col-md-3 d-flex justify-content-center border align-items-center">
+                            <?php if ($rowofsell['status'] == "กำลังดำเนินการ") : ?>
+                                <h5 class="text-warning"><?php echo $rowofsell['status'] ?></h5>
+                            <?php else : ?>
+                                <h5 class="text-success"><?php echo $rowofsell['status'] ?></h5>
+                            <?php endif ?>
+                        </div>
+                    </div>
                 <?php } while ($rowofsell = mysqli_fetch_array($resultsell)) ?>
             <?php else : //ถ้าไม่มีประวัติการซื้อ 
             ?>
-                <p>คุณยังไม่มีประวัติการซื้อ</p>
+                <div class="p-5 mt-5">
+                    <h3 class="d-flex justify-content-center text-secondary">-- คุณยังไม่มีประวัติการซื้อ --</h3>
+                </div>
+
             <?php endif ?>
         </div>
 

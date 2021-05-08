@@ -25,28 +25,31 @@ if (isset($_SESSION['username'])) { //user in session jump to index
         <form action="savedb_user.php" method="post">
             <?php if (isset($_SESSION['error'])) : ?>
                 <div id="error">
-                    <?php echo $_SESSION['error'];
-                    unset($_SESSION['error']); ?>
+                    <div class="text-danger d-flex justify-content-center">
+                        <?php echo $_SESSION['error'];
+                        unset($_SESSION['error']); ?>
+                    </div>
+
                 </div>
             <?php endif ?>
             <div class="mb-3 row">
                 <div class="col-md-6">
                     <label for="username" class="form-label">Username</label>
-                    <input type="text" class="form-control" id="username" name="username" maxlength="15" required>
+                    <input onfocus="disableerr()" type="text" class="form-control" id="username" name="username" maxlength="15" required>
                 </div>
                 <div class="col-md-6">
                     <label for="Email" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="Email" name="Email" maxlength="40" required>
+                    <input type="email" class="form-control" id="Email" name="Email" maxlength="40" required onfocus="disableerr()">
                 </div>
             </div>
             <div class="mb-3 row">
                 <div class="col-md-6">
                     <label for="name" class="form-label">ชื่อ</label>
-                    <input type="text" class="form-control" id="name" name="name" maxlength="35" required>
+                    <input type="text" class="form-control" id="name" name="name" maxlength="35" required onfocus="disableerr()">
                 </div>
                 <div class="col-md-6">
                     <label for="lastname" class="form-label">นามสกุล</label>
-                    <input type="text" class="form-control" id="lastname" name="lastname" maxlength="35" required>
+                    <input type="text" class="form-control" id="lastname" name="lastname" maxlength="35" required onfocus="disableerr()">
                 </div>
             </div>
             <div class="mb-3 row">
@@ -60,21 +63,21 @@ if (isset($_SESSION['username'])) { //user in session jump to index
                 </div>
                 <div class="col-md-6">
                     <label for="PhoneNumber" class="form-label">เบอร์โทรศัพท์</label>
-                    <input type="number" class="form-control" id="PhoneNumber" name="PhoneNumber" maxlength="10" required>
+                    <input type="number" class="form-control" id="PhoneNumber" name="PhoneNumber" maxlength="10" required onfocus="disableerr()">
                 </div>
             </div>
             <div class="mb-3">
                 <label class="form-label for=" adress">ที่อยู่(สำหรับการจัดส่งสินค้า)</label>
-                <textarea class="form-control" id="adress" name="address" maxlength="300" required></textarea>
+                <textarea class="form-control" id="adress" name="address" maxlength="300" required onfocus="disableerr()"></textarea>
             </div>
             <div class="mb-3 row">
                 <div class="col-md-6">
                     <label class="form-label for=" password">รหัสผ่าน</label>
-                    <input class="form-control" onkeyup="passchek()" id="pwd1" type="password" name="password" maxlength="35" required>
+                    <input class="form-control" onkeyup="passchek()" id="pwd1" type="password" name="password" maxlength="35" required onfocus="disableerr()">
                 </div>
                 <div class="col-md-6">
                     <label class="form-label for=" password2">ยืนยันรหัสผ่าน</label>
-                    <input class="form-control" onkeyup="passchek()" id="pwd2" type="password" name="password2" maxlength="35" required>
+                    <input class="form-control" onkeyup="passchek()" id="pwd2" type="password" name="password2" maxlength="35" required onfocus="disableerr()">
                 </div>
                 <div class="d-flex justify-content-end mt-1 text-danger" id="errpwd"></div>
             </div>
@@ -86,8 +89,8 @@ if (isset($_SESSION['username'])) { //user in session jump to index
         </form>
     </div>
 
-   
-    
+
+
 
     <script>
         const pwd1 = document.querySelector("#pwd1");

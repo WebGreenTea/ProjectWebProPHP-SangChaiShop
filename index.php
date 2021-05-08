@@ -74,7 +74,7 @@ if ((isset($_GET['type'])) && (isset($_GET['brand']))) {
                         </a>
 
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <li><a class="dropdown-item" href="userinfo/myaccount.php">บัญชีของฉัน</a></li>
+                            <li><a class="dropdown-item" href="myaccountinfo.php">ตั้งค่าข้อมูลส่วนตัว</a></li>
                             <li><a class="dropdown-item" href="order_history.php">ประวัติการสั่งซื้อ</a></li>
                             <li><a class="dropdown-item" href="index.php?logout='1'">Logout</a></li>
                         </ul>
