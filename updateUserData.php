@@ -54,16 +54,14 @@
         }
 
         if($duplicateEmail || $duplicateUsername){
-            $_SESSION['error'] = "Username หรือ e-mail นี้มีอยู่แล้ว";
+            $_SESSION['status'] = "!บันทึกข้อมูลไม่สำเร็จ: Username หรือ e-mail นี้มีอยู่แล้ว";
             header('location: myaccountinfo.php');
         }
-        else if(count($errors) == 0){
-            
-
-            
+        else if(count($errors) == 0){ 
             $sql = "UPDATE user_data SET username='$username',name='$name',lastname='$lastname',gender='$gender',address='$address',email='$email',PhonNumber=$PhoneNumber WHERE userid=$userid";
             mysqli_query($conect,$sql);
-            header('location: myaccountinfo.php?success=1');
+            $_SESSION['status'] = " -- บันทึกข้อมูลเสร็จสิ้น -- ";
+            header('location: myaccountinfo.php');
 
         }
         else{

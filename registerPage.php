@@ -73,7 +73,7 @@ if (isset($_SESSION['username'])) { //user in session jump to index
             <div class="mb-3 row">
                 <div class="col-md-6">
                     <label class="form-label for=" password">รหัสผ่าน</label>
-                    <input class="form-control" onkeyup="passchek()" id="pwd1" type="password" name="password" maxlength="35" required onfocus="disableerr()">
+                    <input class="form-control" onkeyup="passchek()" id="pwd1" type="password" name="password" maxlength="35" required onfocus="disableerr()" pattern=".{8,}" title="ตัวอักษรอย่างน้อย 8 ตัว">
                 </div>
                 <div class="col-md-6">
                     <label class="form-label for=" password2">ยืนยันรหัสผ่าน</label>

@@ -67,6 +67,7 @@ $rowofsell = mysqli_fetch_array($resultsell);
 
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                         <li><a class="dropdown-item" href="myaccountinfo.php">ตั้งค่าข้อมูลส่วนตัว</a></li>
+                        <li><a class="dropdown-item" href="changePassPage.php">เปลี่ยนรหัสผ่าน</a></li>
                         <li><a class="dropdown-item" href="index.php?logout='1'">Logout</a></li>
                     </ul>
                 </div>
