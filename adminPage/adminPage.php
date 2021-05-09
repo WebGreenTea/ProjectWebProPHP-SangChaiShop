@@ -1,3 +1,16 @@
+<?php
+session_start();
+include('../conectDB.php');
+if (!(isset($_SESSION['identity']) && $_SESSION['identity'] == "admin")) {
+    header('location: ../index.php');
+}
+$sql = "SELECT product.productid,product.PDname,product.price,product.count,product.picture,product_brand.pdbrand,product_type.pdtype FROM product 
+INNER JOIN product_brand ON product.brandid=product_brand.brandid
+INNER JOIN product_type ON product.typeid=product_type.typeid";
+$productData = mysqli_query($conect, $sql);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,34 +39,43 @@
     </nav>
 
     <div class="container">
-        <h2 class="mt-5 d-flex justify-content-center"> -- จัดการสินค้า -- </h2>
+        <h2 class="mt-5 d-flex justify-content-center mb-4"> -- จัดการสินค้า -- </h2>
+        <div class="row">
+            <div class="col-md-4">
+            เรียงตาม:
+            </div>
+            <div class="col-md-5">
+            </div>
+            <div class="col-md-3 d-flex justify-content-end">
+                <a href="" class="btn btn-success">เพิ่มสินค้าใหม่ + </a>
+            </div>
+
+        </div>
         <table class="table">
             <thead>
                 <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Handle</th>
+                    <th scope="col">ID</th>
+                    <th></th>
+                    <th scope="col">ชื่อสินค้า</th>
+                    <th scope="col">ยี่ห้อ</th>
+                    <th scope="col">ประเภท</th>
+                    <th scope="col">ราคาต่อชิ้น</th>
+                    <th scope="col">จำนวน</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td colspan="2">Larry the Bird</td>
-                    <td>@twitter</td>
-                </tr>
+                <?php while ($rowProdict = mysqli_fetch_array($productData)) { ?>
+                    <tr>
+                        <th scope="row"><?php echo $rowProdict['productid'] ?></th>
+                        <td><img src="../productPic/<?php echo $rowProdict['picture'] ?>" style="height: 50px;" alt=""></td>
+                        <td><?php echo $rowProdict['PDname'] ?></td>
+                        <td><?php echo $rowProdict['pdbrand'] ?></td>
+                        <td><?php echo $rowProdict['pdtype'] ?></td>
+                        <td><?php echo $rowProdict['price'] ?></td>
+                        <td><?php echo $rowProdict['count'] ?></td>
+                        <td><a href="editProduct.php?id=<?php echo $rowProdict['productid'] ?>" class="btn btn-warning">แก้ไข</a> <a href="delProduct.php?id=<?php echo $rowProdict['productid'] ?>" class="btn btn-danger">ลบ</a></td>
+                    </tr>
+                <?php } ?>
             </tbody>
         </table>
     </div>
