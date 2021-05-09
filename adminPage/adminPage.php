@@ -47,7 +47,7 @@ $productData = mysqli_query($conect, $sql);
             <div class="col-md-5">
             </div>
             <div class="col-md-3 d-flex justify-content-end">
-                <a href="" class="btn btn-success">เพิ่มสินค้าใหม่ + </a>
+                <a href="addProductPage.php" class="btn btn-success">เพิ่มสินค้าใหม่ + </a>
             </div>
 
         </div>
