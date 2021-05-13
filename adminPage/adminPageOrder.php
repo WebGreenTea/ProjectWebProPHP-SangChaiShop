@@ -13,7 +13,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between flex-nowrap flex-row">
         <div class="container">
-            <a href="../" class="navbar-brand float-left">กลับหน้าหลัก</a>
+            <a href="../" class="navbar-brand float-left">กลับหน้าร้านค้า</a>
             <ul class="nav navbar-nav ml-auto">
                 <li class="nav-item">
                     <a href="adminPage.php" class="nav-link pr-3 active">จัดการสินค้า</a>

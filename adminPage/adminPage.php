@@ -26,7 +26,7 @@ $productData = mysqli_query($conect, $sql);
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between flex-nowrap flex-row">
         <div class="container">
-            <a href="../" class="navbar-brand float-left">กลับหน้าหลัก</a>
+            <a href="../" class="navbar-brand float-left">กลับหน้าร้านค้า</a>
             <ul class="nav navbar-nav ml-auto">
                 <li class="nav-item">
                     <a href="adminPage.php" class="nav-link pr-3 ">จัดการสินค้า</a>
@@ -38,7 +38,7 @@ $productData = mysqli_query($conect, $sql);
         </div>
     </nav>
 
-    <div class="container">
+    <div class="container mb-5">
         <h2 class="mt-5 d-flex justify-content-center mb-4"> -- จัดการสินค้า -- </h2>
         <div class="row">
             <div class="col-md-4">
@@ -51,7 +51,7 @@ $productData = mysqli_query($conect, $sql);
             </div>
 
         </div>
-        <table class="table">
+        <table class="table mb-5">
             <thead>
                 <tr>
                     <th scope="col">ID</th>
@@ -73,7 +73,7 @@ $productData = mysqli_query($conect, $sql);
                         <td><?php echo $rowProdict['pdtype'] ?></td>
                         <td><?php echo $rowProdict['price'] ?></td>
                         <td><?php echo $rowProdict['count'] ?></td>
-                        <td><a href="editProduct.php?id=<?php echo $rowProdict['productid'] ?>" class="btn btn-warning">แก้ไข</a> <a href="delProduct.php?id=<?php echo $rowProdict['productid'] ?>" class="btn btn-danger">ลบ</a></td>
+                        <td><a href="editProduct.php?id=<?php echo $rowProdict['productid'] ?>" class="btn btn-warning">แก้ไข</a> <a href="delProduct.php?id=<?php echo $rowProdict['productid'] ?>" class="btn btn-danger" onClick="return confirm('Are you sure you want to delete?')">ลบ</a></td>
                     </tr>
                 <?php } ?>
             </tbody>

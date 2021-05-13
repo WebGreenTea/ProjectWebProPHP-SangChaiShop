@@ -112,6 +112,10 @@ $product =  mysqli_fetch_assoc($product);
             </div>
         </div>
 
+        <div class="mt-5 mb-5 bg-light">
+            <textarea class="form-control" disabled rows="20"><?php echo $product['info'] ?></textarea>
+        </div>
+
         <div class="mt-5 bg-light border">
             <?php $infourl = 'infoproduct/' . $product['info']; ?>
             <object width="100%" height="700" type="text/plain" data="<?php echo $infourl ?>" border="0" style="overflow: hidden;"> </object>
