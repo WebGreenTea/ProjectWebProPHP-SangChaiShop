@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 14, 2021 at 06:29 PM
+-- Generation Time: May 14, 2021 at 08:26 PM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 8.0.6
 
@@ -72,7 +72,6 @@ INSERT INTO `cartinfo` (`cartid`, `productid`, `count`) VALUES
 (24, 7, 1),
 (25, 3, 5),
 (25, 5, 1),
-(26, 3, 2),
 (26, 56, 1),
 (27, 37, 1),
 (27, 36, 1);
@@ -100,13 +99,13 @@ CREATE TABLE `product` (
 
 INSERT INTO `product` (`productid`, `typeid`, `brandid`, `PDname`, `price`, `count`, `picture`, `info`) VALUES
 (2, 1, 1, 'LG GN-C222SLC', 8700, 49, '609e5874c93165.96094196.jpg', 'ข้อมูลทั่วไป / Overview:\r\nควบคุมอุณหภูมิให้คงที่ทุกเวลา\r\nการควบคุมอุณหภูมิภายในให้คงที่ได้อย่างทั่วถึงนั้น\r\nเป็นหัวใจสำคัญในการรักษาความสดใหม่ของอาหาร ซึ่งเทคโนโลยี LINEAR Cooling™\r\nสามารถควบคุมภายในตู้เย็นให้มีความแตกต่างกันเพียง ±0.5°C\r\n\r\nจุดปล่อยลมเย็นบริเวณบานประตู\r\nLG DoorCooling+™ ช่วยควบคุมอุณหภูมิภายในตู้เย็นให้เย็นทั่วถึง และเย็นเร็วขึ้นถึง 35 เมื่อเปรียบเทียบกับการทำความเย็นระบบทั่วไป เทคโนโลยีนี้ช่วยลดความแตกต่างของอุณหภูมิภายในตู้เย็น ให้มีความเย็นทั่วถึงกัน\r\n\r\nรักษาระดับความชุ่มชื้นภายในช่องแช่ผักและผลไม้\r\nด้วยการดีไซน์แผ่นรักษาระดับความชุ่มชื้นแบบใหม่เพิ่มในช่องแช่ ทำให้ผัก ผลไม้ของคุณ\r\nคงความสดได้ยาวนาน\r\n\r\nกระจายลมเย็นได้อย่างรวดเร็วและทั่วถึง\r\nระบบกระจายลมเย็นหลายทิศทาง ช่วยให้ความเย็นกระจายไปทั่วทั้งตู้ เย็นเร็วทันใจ ทำให้อาหารแล้วเครื่องดื่มภายในตู้เย็นได้รับความเย็นอย่างทั่วถึง\r\n\r\nประหยัดพลังงานด้วย Inverter Linear Compressor\r\nคอมเพรสเซอร์แนวนอนระบบอินเวอร์เตอร์ (Inverter Linear Compressor) เป็นเทคโนโลยีที่คิดค้นเพื่อช่วยเรื่องการประหยัดพลังงานที่เพิ่มขึ้น ด้วยการลดการเสียสีภายในช่วยเพิ่มความทนทานในการใช้งานและลดเสียงในการทำงานอีกด้วย\r\n\r\nช่องทำน้ำแข็งปรับเลื่อนได้\r\nเพิ่มความสะดวกสบายในการจัดเก็บ\r\nคุณสามารถปรับเปลี่ยนช่องทำน้ำแข็งได้ด้วยตนเอง ช่วยเพิ่มพื้นที่ในช่องแช่แข็ง\r\n\r\nข้อมูลจำเพาะ / Specifications:\r\nความจุ 7.4 คิว\r\n\r\nสีตัวเครื่อง สีเงินแพลตตินัม\r\n\r\nระบบคอมเพรสเซอร์ Inverter Linear Compressor\r\n\r\nระบบกระจายลมเย็น Yes\r\n\r\nMoist Balance Crisper Yes\r\n\r\nชั้นวางกระจกนิรภัย Yes\r\n\r\nGeneral\r\n\r\nขนาดตัวเครื่อง กว้าง 555 X สูง 1,520 X ลึก 585\r\n\r\nรับประกันคอมเพรสเซอร์ 10 ปี\r\n\r\nรับประกันเครื่อง 1 ปี'),
-(3, 7, 1, 'LG 24MT48VF', 3900, 98, '5fa3f06bb199b1.70165602.jpg', 'ข้อมูลทั่วไป / Overview:\r\n24MT48VF\r\n24\" Class (23.6\" Diagonal) HD TV Monitor\r\nคุณลักษณะที่สำคัญ\r\nWide Viewing Angle\r\nWall Mount\r\nGaming Mode(Black Stabilizer / DAS Mode)\r\nCinema Mode\r\nUSB AutoRun\r\n\r\nข้อมูลจำเพาะ / Specifications:\r\n24MT48VF\r\n24\" Class (23.6\" Diagonal) HD TV Monitor\r\nคุณลักษณะที่สำคัญ\r\nWide Viewing Angle\r\nWall Mount\r\nGaming Mode(Black Stabilizer / DAS Mode)\r\nCinema Mode\r\nUSB AutoRun'),
+(3, 7, 1, 'LG 24MT48VF', 3900, 96, '5fa3f06bb199b1.70165602.jpg', 'ข้อมูลทั่วไป / Overview:\r\n24MT48VF\r\n24\" Class (23.6\" Diagonal) HD TV Monitor\r\nคุณลักษณะที่สำคัญ\r\nWide Viewing Angle\r\nWall Mount\r\nGaming Mode(Black Stabilizer / DAS Mode)\r\nCinema Mode\r\nUSB AutoRun\r\n\r\nข้อมูลจำเพาะ / Specifications:\r\n24MT48VF\r\n24\" Class (23.6\" Diagonal) HD TV Monitor\r\nคุณลักษณะที่สำคัญ\r\nWide Viewing Angle\r\nWall Mount\r\nGaming Mode(Black Stabilizer / DAS Mode)\r\nCinema Mode\r\nUSB AutoRun'),
 (4, 2, 1, 'LG WP-1650WST', 7690, 0, '5fa3f0c4acfd81.15835834.jpg', 'ข้อมูลทั่วไป / Overview:\r\nรายละเอียด : เครื่องซักผ้าฝาบน 2 ถัง\r\nWP-165WST (ฝาใส)ซัก 14 KG.\r\n-Health+Filter ปกป้องเสื้อผ้าให้ปราศจากเชื้อโรคและสะอาดสดชื่นอยู่เสมอ\r\n-จานซักแบบ Punch+3 Roller Jet\r\n-เทคโนโลยี Wind Jet Dry เพิ่มประสิทธิภาพในการปั่นหมาด ทำให้ผ้าแห้งเร็วขึ้น\r\n-Soak Function แช่ผ้าสลับซักเพิ่มประสิทธิภาพในการขจัดคราบสกปรก\r\n-ตัวถังทำจากวัสดุเรซินอย่างดีมีคุณภาพสูง ป้องกันสนิม สีทูโทน\r\n-เลือกโปรแกรมการซักได้ 3 แบบ (Gentle,Normal,Strong)\r\n-ระบบป้องกันความปลอดภัยเครื่องหยุดทำงานเมื่อฝาปั่นเปิด\r\n-แผงควบคุมดีไซน์หรูแบบคริสตัลพร้อมลูกบิดสไตล์โครเมียม'),
 (5, 6, 5, 'Toshiba ER-SM20(W)TH', 1490, 14, '5fa3f0f1ac1fa4.58710085.jpg', 'ข้อมูลทั่วไป / Overview:\r\nเตาอบไมโครเวฟ ER-SM20(W)TH\r\nปรับระดับได้ 5 ระดับ :เลือกใช้งานได้ตามความเหมาะสมของอาหาร แต่ละประเภท\r\nโดยสามารถเลือกระดับไมโครเวฟได้ถึง 5 ระดับ (0% -100%)\r\nระบบควบคุมการทำงานเป็นแบบปรับหมุน\r\nระบบการกระจายคลื่นเป็นระบบจานหมุน\r\nมีฟังก์ชันละลายน้ำแข็ง\r\nมีฉลากประหยัดไฟเบอร์ 5\r\n\r\nข้อมูลจำเพาะ / Specifications:\r\nความจุ (ลิตร)20\r\nแรงดันไฟฟ้าที่ใช้220V / 50Hz\r\nฟังก์ชันหลักไมโครเวฟ\r\nโปรแกรมเมนูอัตโนมัติไม่มี\r\nการตั้งเวลาปรุงอาหารสูงสุด (นาที:วินาที)35:00\r\nขนาดตัวเครื่อง (กว้างx ลึกx สูง) (มม.)440x325x258\r\nน้ำหนัก (กก.)11.2\r\nอัตราการกินไฟไมโครเวฟ/ตัวทำความร้อน (วัตต์)1270\r\nระดับกำลังไฟไมโครเวฟ (วัตต์)800\r\nระบบตั้งอุณหภูมิไมโครเวฟ5\r\nระดับระบบการกระจายคลื่นระบบจานหมูน\r\nระบบละลายอาหารแช่แข็งมีตัดการทำงานเมื่อเปิดบานประตูมีเสียงเตือนเมื่อทำงานเสร็จมีเทอร์โมฟิวส์\r\nมีการรับประกันรับประกันสินค้า 1 ปี\r\nรับประกันแมกนิตรอน 5 ปี'),
 (6, 4, 2, 'SAMSUNG AR13MRF', 12900, 8, '5fa3f1234ce9c7.22549862.jpg', 'ข้อมูลทั่วไป / Overview:\r\nทำความเย็นได้รวดเร็วกว่า และกว้างไกลกว่า\r\n•ทำความเย็นได้รวดเร็ว คุณจึงรู้สึกสบายอย่างแท้จริง\r\n• ทำงานแบบอัจฉริยะ ประหยัดพลังงาน\r\n• ประหยัดพลังงานแม้เมื่ออยู่คนเดียวทำความเย็นได้รวดเร็วกว่า และกว้างไกลกว่า\r\n\r\nเครื่องปรับอากาศ Samsung ได้รับการออกแบบเป็นพิเศษเพื่อประสิทธิภาพที่โดดเด่น ดีไซน์รูปสามเหลี่ยมที่เป็นเอกลักษณ์มีช่องลมเข้าที่กว้างขึ้น เพื่อดูดอากาศเข้าสู่ตัวเครื่องได้มากกว่า ขณะที่ช่องปล่อยลมมีความกว้างและมุมที่เหมาะสม ประกอบกับแผงลมรูปตัววี และพัดลมที่ใหญ่กว่า จะช่วยให้อากาศในห้องเย็นเร็วขึ้น และเพิ่มแรงลมให้ไปได้เร็วและไกลกว่า ดังนั้นลมเย็นที่สดชื่นจะกระจายสู่ทุกมุมห้องอย่างทั่วถึง\r\n\r\nทำความเย็นได้รวดเร็ว คุณจึงรู้สึกสบายอย่างแท้จริง\r\n\r\nเครื่องปรับอากาศ Samsung เริ่มต้นทำความเย็นได้อย่างรวดเร็ว ด้วยโหมด Fast Cool ที่ทรงพลัง จากนั้นระบบจะเปลี่ยนเป็นโหมด Comfort Cool โดยอัตโนมัติ เพื่อรักษาระดับอุณหภูมิที่ต้องการ คุณจึงไม่รู้สึกหนาว และไม่จำเป็นต้องเปลี่ยนแปลงการตั้งค่าด้วยตนเองหรือปิดและเปิดเครื่องปรับอากาศ\r\n\r\nประหยัดพลังงานโดยอัตโนมัติ\r\n\r\nด้วยโหมด Single User คุณไม่จำเป็นต้องเปิดและปิดเครื่องปรับอากาศ Samsung ครั้งแล้วครั้งเล่าเพื่อประหยัดพลังงาน หรือกลัวเปลืองไฟหากใช้เครื่องปรับอากาศในช่วงเวลาที่อากาศไม่ร้อนสักเท่าใด ในโหมดนี้ คอมเพรสเซอร์และพัดลมจะทำงานตามระยะเวลาที่เหมาะสมเพื่อรักษาระดับอุณหภูมิที่ต้องการ และจะปิดการทำงานโดยอัตโนมัติเมื่อไม่จำเป็นต้องใช้ ดังนั้นจึงใช้ไฟฟ้าน้อยลงอย่างมาก ช่วยให้ห้องของคุณเย็นสบาย ขณะที่คุณจ่ายค่าไฟเพียงเล็กน้อยเท่านั้น\r\n\r\nข้อมูลจำเพาะ / Specifications:\r\nขนาด 12,200 BTU\r\nสำหรับขนาดห้อง 16-20 ตารางเมตร\r\nรับประกันคอมเพรสเซอร์ 5 ปี'),
 (7, 2, 5, 'TOSHIBA AW-A750', 5200, 12, '5f9ea43aa74589.06228217.jpg', 'ข้อมูลทั่วไป / Overview:\r\nวามจุ 6.5 กก. | ถังซักสแตนเลส\r\n\r\nStar Crystal Drum\r\nถังซักประสิทธิภาพสูงด้วยการออกแบบพื้นผิวของตัว\r\nถังซักให้โค้งรับกับการปั่นผ้า และไม่ทำลายเนื\r\n\r\nCondensed Wash\r\nเพิ่มประสิทธิภาพในการซัก ด้วยกระแสน้ำวนขึ้น-ลง\r\nในแนวตั้งและแนวนอน ทำให้น้ำ และผงซักฟอก\r\nเข้าสู่เนื้อผ้าได้ดียิ่งขึ้น\r\n\r\nLinear Water Level\r\nประหยัดการใช้น้ำได้สูงสุด สามารถปรับระดับ\r\nการซักได้เองในปริมาณน้ำ 12 ลิตร\r\n\r\nShower Rinse\r\nด้วยการดีไซน์ตลับกรองสิ่งสกปรกภายในเครื่อง\r\nสามารถถอดทำความสะอาดได้ง่าย และใช้งานได้นาน\r\n\r\n4 โปรแกรมการซัก (Regular, Speed , Delicate , Soak)\r\n\r\nรับประกันมอเตอร์ 10 ปี\r\n\r\nข้อมูลจำเพาะ / Specifications:\r\nความจุ (กก.) 6.5\r\nการกินไฟ (วัตต์) ซัก, ปั่น 390, 355\r\nแรงดันไฟฟ้า (โวลท์, เฮิร์ต) 220V, 50Hz\r\nระดับน้ำ (ลิตร) 12-53 ลิตร\r\nMotor Belt Drive\r\nCircular Intake (30-90 นาที) มี\r\nโปรแกรมซักผ้า 4\r\nโปรแกรมป้องกันเด็ก (Childproof) มี\r\nขาตั้ง มี\r\nถุงกรองใยผ้า เคลื่อนที่อิสระ\r\nวัสดุถังซักภายใน แสตนเลส\r\nวัสดุถังเหล็กเคลือบกันสนิม 2 ชั้น มี\r\nลักษณะจานซัก สกรู 6 ครีบ\r\nHybrid Screw Pulsator จานยับยั้งแบคทีเรียและเชื้อรา มี\r\n\r\nขนาดเครื่อง (มม.) (กลส) 555x590x905\r\nขนาดกล่อง (มม.) (กลส) 570x585x980'),
 (8, 5, 6, 'PANASONIC NI-27A', 850, 15, '5f9ea4683d7966.58706893.jpg', 'ข้อมูลทั่วไป / Overview:\r\nเตารีดแห้งพานาโซนิค​ NI-27A น้ำหนัก 2.45 กก.\r\n\r\nคุณสมบัติ\r\n- Heavy Weight\r\n- ฉนวนป้องกันความร้อน​ ป้องกันความร้อนระหว่างแผ่นความร้อนกับตัวเตารีด ช่วยยืดอายุการใช้งานได้อย่างมีประสิทธิภาพ\r\n- ร่องขอบฐานและปลายหัวเตารีด​ ออกแบบให้สะดวกในการรีด ทุกพื้นที่ ทุกซอกทุกมุมของเส้อผ้า เช่น สาบเสื้อ ใต้กระดุม คอเสื้อ จีบกระโปรง\r\n- ขั้วสายแบบอิสระ​ รีดเรียบได้อิสระ สะดวก ไม่ทำให้เกิดรอยยับหลังการรีด คุ้มค่า ไม่ทำให้สายหักงอ หรือขาดง่ายช่วยรักษาสายให้ใช้งานได้นาน\r\n- ปลอดภัยด้วยระบบเทอร์มอลฟิวส์ ป้องกันกระแสไฟฟ้าลัดวงจร\r\n\r\nข้อมูลทั่วไป กำลังไฟฟ้า (วัตต์) 1,000\r\nน้ำหนัก (กก.) 2.45\r\nแผ่นความร้อน ไม่มี\r\nสี ดำ (BL)'),
-(19, 1, 9, 'HITACHI R-20NP', 4590, 8, '5f9ea4a705a736.94187403.jpg', 'ข้อมูลจำเพาะ / Specifications:\r\nR-20NP (1.7 Q/49 Litres)\r\n\r\nKey Highlights\r\n\r\n• Semi Automatic Defrost System\r\n\r\n• Grid Shelf\r\n\r\n• Moldproof Door Gasket\r\n\r\n• PCM Coated Color Door\r\n\r\n• Dimensions (W x D x H) : 450 x 490 x 500 mm.\r\n\r\n• สีดำ\r\n\r\n• ละลายน้ำแข็งกึ่งอัตโนมัติ\r\n\r\n• ประหยัดพลังงาน : มี\r\n\r\n• การรับประกันเครื่อง 1 ปี\r\n\r\n• การประกันCompressor 5 ปี'),
+(19, 1, 9, 'HITACHI R-20NP', 4590, 7, '5f9ea4a705a736.94187403.jpg', 'ข้อมูลจำเพาะ / Specifications:\r\nR-20NP (1.7 Q/49 Litres)\r\n\r\nKey Highlights\r\n\r\n• Semi Automatic Defrost System\r\n\r\n• Grid Shelf\r\n\r\n• Moldproof Door Gasket\r\n\r\n• PCM Coated Color Door\r\n\r\n• Dimensions (W x D x H) : 450 x 490 x 500 mm.\r\n\r\n• สีดำ\r\n\r\n• ละลายน้ำแข็งกึ่งอัตโนมัติ\r\n\r\n• ประหยัดพลังงาน : มี\r\n\r\n• การรับประกันเครื่อง 1 ปี\r\n\r\n• การประกันCompressor 5 ปี'),
 (25, 3, 10, 'HATARI HB-S16M4', 820, 11, '5fa047f2f3c9f3.40325786.jpg', 'ข้อมูลทั่วไป / Overview:\r\nHB-S16M4\r\nพัดลมปรับระดับ 16 นิ้ว\r\n\r\nปรับแรงลมได้ 3 ระดับ\r\nปรับระดับความสูงได้ 5 ระดับ ได้ตั้ง แต่ 87.5-107.5 เซนติเมตร\r\nปรับส่ายซ้าย-ขวา และหยุดส่ายได้ตามต้องการ\r\nเสริมความปลอดภัยด้วยระบบตัดไฟอัตโนมัติ เทอร์มอล ฟิวส์\r\nมอเตอร์ประสิทธิภาพสูงด้วยระบบรองลื่น ซินเทอริ่ง เมทัล\r\nผ่านกระบวนการผลิตที่ได้รับการรับรองมาตรฐานระบบการจัดการสิ่งแวดล้อม ISO 14001\r\nได้รับมาตรฐานความปลอดภัย มอก.934-2558 จากสำนักงานมาตรฐานผลิตภัณฑ์อุตสาหกรรม กระทรวงอุตสาหกรรม\r\nได้รับมาตรฐานประหยัดไฟเบอร์ 5 จากการไฟฟ้าฝ่ายผลิตแห่งประเทศไทย'),
 (26, 4, 2, 'SAMSUNG  AR10TYHZCWKNST', 11990, 900, '5fa3fb57ec5a58.82032777.jpg', 'รายละเอียดสินค้า\r\n\r\n-ขนาด(BTU ที่ระบุในฉลากประหยัดไฟ):9,000\r\n\r\n-สำหรับห้องขนาด(ตรม):12-15\r\n\r\n-ระบบ INVERTER:มี\r\n\r\n-ระบุช่วง BTU:3,500-13,000\r\n\r\n-ประหยัดไฟเบอร์ 5(ดาว):1\r\n\r\n-ขนาด(ซม):29.9 x 82.0 x 21.5\r\n\r\n-SEER ประสิทธิภาพการประหยัดไฟ:19\r\n\r\n-รับประกันCOMPRESER(ปี):10'),
 (27, 7, 1, 'LG 70UN7300PTC', 35000, 35, '5fa43c4ce97542.41630350.jpg', 'ข้อมูลทั่วไป / Overview:\r\nReal 4K ความละเอียดจอ 8 ล้านพิกเซล(3,840 x 2,160p)\r\n4K Active HDR ภาพ HDR ทั้งแบบ HDR 10 Pro และ HLG\r\nLG ThinQ AI สมาร์ททีวีใช้งานง่าย สั่งได้ด้วยเสียง\r\nAirplay2 & Homekit แชร์คอนเทนต์จาก iOS สู่จอทีวี\r\nHome Dashboard ควบคุมเครื่องใช้ไฟฟ้าด้วยเมจิกรีโมท\r\n2.0 Ch/20W พลังเสียง 20 วัตต์ เสียงรอบทิศทาง 2.0Ch\r\n\r\nข้อมูลจำเพาะ / Specifications:\r\nจอแสดงผล\r\nขนาดหน้าจอ 70\"\r\nความละเอียด 4K (3840 x 2160p)\r\nประเภท BLU Direct\r\nTruMotion Refresh rate 50Hz (TM100)\r\nVIDEO(PICTURE QUALITY)\r\nIntelligent Processor Quad Core Processor\r\nUpscaler 4K Upscaler\r\nHDR10 Pro Yes\r\nHDR 4K Active HDR\r\nFilmmaker Mode Yes\r\nHDR Effect Yes\r\nVideo Decoder HEVC : 4K@60P, 10bit\r\nVP9 : 4K@60P, 10bit\r\nInstant Game Response (VRR/ALLM) only ALLM\r\nAUDIO\r\nSound Output 20W\r\nChannel 2.0ch\r\nDirection Down Firing\r\nDolby Digital Yes\r\nAI Sound AI Sound Optimizer_Machine learning based\r\nAI Acoustic Tuning Yes\r\nClear Voice Clear Voice III\r\nBluetooth Surround Sound Yes\r\nLG Sound Sync Yes\r\nฟังก์ชั่น AI\r\nAI ThinQ Yes\r\nGoogle Assistant Yes\r\nระบบปฏิบัติการสมาร์ททีวี (OS) webOS Smart TV\r\nLG Voice Search Yes\r\nMobile Connectivity Yes\r\nLG TV Plus App Yes\r\nSmart ThinQ App Yes\r\nApple AirPlay 2 Yes\r\nสมาร์ทฟังก์ชั่น\r\nNumber of CPUs Quad\r\nMagic Remote Control Built-In\r\nSport Alert Yes\r\nการเชื่อมต่อ\r\nScreen Share Yes\r\nHDMI 3\r\nHDMI Version HDMI 2.0\r\nUSB 2\r\nOptical Digital Audio Out Yes\r\nBluetooth Vision 5.0 Yes\r\nคุณสมบัติเพิ่มเติม\r\nTime Machine (DVR) Yes\r\nREMOTE\r\nประเภทของรีโมท Bundle Magic Remote (MR20) in Box\r\nDESIGN\r\nSlim Frame design ดีไซน์ร่วมสมัย ง่ายต่อการจัดวาง\r\nCONNECTIVITY\r\nConnectivity Wi-Fi, Bluetooth 5.0, HDMI 2.0 : 3 ช่อง, USB 2 ช่อง'),
@@ -220,9 +219,10 @@ CREATE TABLE `sell` (
 
 INSERT INTO `sell` (`sellid`, `userid`, `date`, `status`, `address`) VALUES
 (61, 38, '14/05/20', 'ส่งแล้ว', '88/9999\r\n9999'),
-(62, 38, '14/05/20', 'รายการนี้ถูกยกเลิก', '88/9999\r\n9999'),
+(62, 38, '14/05/20', 'กำลังดำเนินการ', '88/9999\r\n9999'),
 (63, 38, '14/05/20', 'กำลังดำเนินการ', '88/9999\r\n9999'),
-(64, 38, '14/05/20', 'กำลังดำเนินการ', '88/9999\r\n9999');
+(64, 38, '14/05/20', 'รายการนี้ถูกยกเลิก', '88/9999\r\n9999'),
+(65, 37, '14/05/20', 'กำลังดำเนินการ', '376/8\r\nหน้าเมือง');
 
 -- --------------------------------------------------------
 
@@ -234,28 +234,21 @@ CREATE TABLE `sellinfo` (
   `sellid` int(5) NOT NULL,
   `pdid` int(5) NOT NULL,
   `price` int(6) NOT NULL,
-  `count` int(3) NOT NULL
+  `count` int(3) NOT NULL,
+  `sellinfoid` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `sellinfo`
 --
 
-INSERT INTO `sellinfo` (`sellid`, `pdid`, `price`, `count`) VALUES
-(55, 8, 850, 1),
-(55, 6, 12900, 1),
-(55, 4, 7690, 1),
-(56, 6, 12900, 2),
-(56, 2, 8700, 1),
-(57, 5, 1490, 1),
-(57, 4, 7690, 1),
-(59, 25, 820, 1),
-(59, 3, 3900, 1),
-(60, 38, 12000, 1),
-(61, 29, 130000, 1),
-(62, 42, 3100, 2),
-(63, 19, 4590, 1),
-(64, 3, 3900, 1);
+INSERT INTO `sellinfo` (`sellid`, `pdid`, `price`, `count`, `sellinfoid`) VALUES
+(61, 29, 130000, 1, 11),
+(62, 42, 3100, 2, 12),
+(63, 19, 4590, 1, 13),
+(64, 3, 3900, 1, 14),
+(65, 3, 3900, 2, 15),
+(65, 19, 4590, 1, 16);
 
 -- --------------------------------------------------------
 
@@ -287,7 +280,7 @@ INSERT INTO `user_data` (`userid`, `username`, `name`, `lastname`, `gender`, `ad
 (33, 'Suppanut55', 'ศุภณัฎฐ์', ' จั่นวิลัย', 'ชาย', 'บ้านเลขที่9 ซอย4 ถนน.เทศา ต.พระปฐมเจดีย์\r\nอ.เมือง จ.นครปฐม', 'terkub8142@gmail.com', 610105454, '51351a9d782e7aade34e198cadc199a1', NULL),
 (34, 'Pacha', 'ปองพล', 'ดีดำ', 'ชาย', 'บ้านเลข6 ต.ดอนหวาย อ.เมือง จ.นครปฐม ', 'suppanut2543@gmail.com', 685432110, 'e10adc3949ba59abbe56e057f20f883e', NULL),
 (35, 'test2', 'สหวุฒิ', 'บุญยืน', 'ชาย', '376/8 ต.หน้าเมือง', 'wgtwgtwgt1@gmail.com', 892471815, '81dc9bdb52d04dc20036dbd8313ed055', NULL),
-(37, 'WebGreenTea', 'Sahawut ', 'Boonyurn', 'ชาย', '376/8\r\nหน้าเมือง', 'sahawut092013@gmail.com', 892471815, '827ccb0eea8a706c4c34a16891f84e7b', NULL),
+(37, 'WebGreenTea', 'Sahawut ', 'Boonyurn', 'ชาย', '376/8\r\nหน้าเมือง', 'sahawut092013@gmail.com', 892471815, '598d73db04f61bb1170469ba2b8163fd', NULL),
 (38, 'admin', 'admin', 'man', 'อื่นๆ', '88/9999\r\n9999', 'admin@gmail.com', 999999999, '598d73db04f61bb1170469ba2b8163fd', 'admin');
 
 --
@@ -323,6 +316,12 @@ ALTER TABLE `product_type`
 --
 ALTER TABLE `sell`
   ADD PRIMARY KEY (`sellid`);
+
+--
+-- Indexes for table `sellinfo`
+--
+ALTER TABLE `sellinfo`
+  ADD PRIMARY KEY (`sellinfoid`);
 
 --
 -- Indexes for table `user_data`
@@ -362,7 +361,13 @@ ALTER TABLE `product_type`
 -- AUTO_INCREMENT for table `sell`
 --
 ALTER TABLE `sell`
-  MODIFY `sellid` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
+  MODIFY `sellid` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
+
+--
+-- AUTO_INCREMENT for table `sellinfo`
+--
+ALTER TABLE `sellinfo`
+  MODIFY `sellinfoid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `user_data`

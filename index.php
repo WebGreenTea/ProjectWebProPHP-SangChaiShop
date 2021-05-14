@@ -120,7 +120,7 @@ if ((isset($_GET['type'])) && (isset($_GET['brand']))) {
             <div class="collapse navbar-collapse d-flex justify-content-center" id="navbarNavDarkDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" href="index.php">สินค้าทั้งหมด</a>
+                        <a class="nav-link " href="index.php">สินค้าทั้งหมด</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav">
@@ -237,8 +237,8 @@ if ((isset($_GET['type'])) && (isset($_GET['brand']))) {
                     </li>
                 </ul>
                 <form class="d-flex" accept="" method="get">
-                    <input class="form-control me-2" type="search" placeholder="สิ้นค้าที่ต้องการหา" aria-label="Search" name="seach">
-                    <button class="btn btn-outline-success" type="submit">ค้นหา</button>
+                    <input class="form-control me-2" type="search" placeholder="ชื่อสินค้า" aria-label="Search" name="seach">
+                    <button class="btn btn-outline-info" type="submit">ค้นหา</button>
                 </form>
             </div>
         </div>
