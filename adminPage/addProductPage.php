@@ -34,7 +34,7 @@ $type = mysqli_query($conect, $sql);
                     <a href="" class="nav-link pr-3 ">จัดการสินค้า</a>
                 </li>
                 <li class="nav-item">
-                    <a href="adminPageOrder.php" class="nav-link pr-3 active">จัดการการขาย</a>
+                    <a href="adminPageOrder.php" class="nav-link pr-3 active">จัดการรายการสั่งซื้อ</a>
                 </li>
             </ul>
         </div>

@@ -5,7 +5,7 @@ if (!isset($_SESSION['userid'])) {
     header('location: index.php');
 }
 
-if(isset($_SESSION['success'])){
+if (isset($_SESSION['success'])) {
     echo "<script>alert('เปลี่ยนรหัสผ่านเสร็จสิ้น')</script>";
     unset($_SESSION['success']);
 }
@@ -64,6 +64,9 @@ if(isset($_SESSION['success'])){
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                         <li><a class="dropdown-item" href="order_history.php">ประวัติการสั่งซื้อ</a></li>
                         <li><a class="dropdown-item" href="myaccountinfo.php">ตั้งค่าข้อมูลส่วนตัว</a></li>
+                        <?php if (isset($_SESSION['identity']) && $_SESSION['identity'] == "admin") : ?>
+                            <li><a class="dropdown-item" href="adminPage/adminPage.php">เมนู ADMIN</a></li>
+                        <?php endif ?>
                         <li><a class="dropdown-item" href="index.php?logout='1'">Logout</a></li>
                     </ul>
                 </div>

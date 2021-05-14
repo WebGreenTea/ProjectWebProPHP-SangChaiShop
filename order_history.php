@@ -5,10 +5,9 @@ if (!isset($_SESSION['userid'])) {
     header('location: index.php');
 }
 $userid = $_SESSION['userid'];
- if (isset($_GET['oldFirst'])) {
+if (isset($_GET['oldFirst'])) {
     $sql = "SELECT * FROM `sell` WHERE `userid`=$userid ORDER BY `sellid`";
- }
-else{
+} else {
     $sql = "SELECT * FROM `sell` WHERE `userid`=$userid ORDER BY `sellid` DESC";
 }
 
@@ -68,6 +67,9 @@ $rowofsell = mysqli_fetch_array($resultsell);
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                         <li><a class="dropdown-item" href="myaccountinfo.php">ตั้งค่าข้อมูลส่วนตัว</a></li>
                         <li><a class="dropdown-item" href="changePassPage.php">เปลี่ยนรหัสผ่าน</a></li>
+                        <?php if (isset($_SESSION['identity']) && $_SESSION['identity'] == "admin") : ?>
+                            <li><a class="dropdown-item" href="adminPage/adminPage.php">เมนู ADMIN</a></li>
+                        <?php endif ?>
                         <li><a class="dropdown-item" href="index.php?logout='1'">Logout</a></li>
                     </ul>
                 </div>
@@ -81,7 +83,7 @@ $rowofsell = mysqli_fetch_array($resultsell);
         <div class="d-flex justify-content-center mb-3">
             <h2>ประวัติการสั่งซื้อของฉัน</h2>
         </div>
-        เรียงจาก: 
+        เรียงจาก:
         <?php if (isset($_GET['oldFirst'])) : ?>
             <a href="order_history.php" class="btn btn-dark">ล่าสุด-เก่าสุด</a>
             <a href="order_history.php?oldFirst=1" class="btn btn-secondary">เก่าสุด-ล่าสุด</a>
@@ -100,6 +102,7 @@ $rowofsell = mysqli_fetch_array($resultsell);
                     <div class="row">
                         <div class="col-md-12 mt-5">
                             วันที่สั่ง : <?php echo $rowofsell['date'] ?>
+                            | รหัสการสั่งซื้อ : <?php echo $rowofsell['sellid'] ?>
                         </div>
                     </div>
                     <?php if ($rowofsell['status'] == "กำลังดำเนินการ") : ?>
@@ -117,8 +120,23 @@ $rowofsell = mysqli_fetch_array($resultsell);
                                 ราคารวม
                             </div>
                         </div>
-                    <?php else : ?>
+                    <?php elseif ($rowofsell['status'] == "ส่งแล้ว") : ?>
                         <div class="row bg-success text-light">
+                            <div class="col-md-5 d-flex justify-content-center border">
+                                ชื่อสินค้า
+                            </div>
+                            <div class="col-md-2 d-flex justify-content-center border">
+                                ราคาต่อชิ้น
+                            </div>
+                            <div class="col-md-2 d-flex justify-content-center border">
+                                จำนวนที่สั่งซื้อ
+                            </div>
+                            <div class="col-md-3 d-flex justify-content-center border">
+                                ราคารวม
+                            </div>
+                        </div>
+                    <?php else : ?>
+                        <div class="row bg-danger text-light">
                             <div class="col-md-5 d-flex justify-content-center border">
                                 ชื่อสินค้า
                             </div>
@@ -173,9 +191,21 @@ $rowofsell = mysqli_fetch_array($resultsell);
                         <div class="col-md-3 d-flex justify-content-center border align-items-center">
                             <?php if ($rowofsell['status'] == "กำลังดำเนินการ") : ?>
                                 <h5 class="text-warning"><?php echo $rowofsell['status'] ?></h5>
-                            <?php else : ?>
+                            <?php elseif ($rowofsell['status'] == "ส่งแล้ว") : ?>
                                 <h5 class="text-success"><?php echo $rowofsell['status'] ?></h5>
+                            <?php else : ?>
+                                <h5 class="text-danger"><?php echo $rowofsell['status'] ?></h5>
                             <?php endif ?>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 border">
+                            ที่อยู่ในการจัดส่ง :<br>
+                            <div class="ms-5 me-5 mb-2">
+                                <textarea name="" id="" class="form-control" rows="3" disabled><?php echo $rowofsell['address'] ?></textarea>
+                            </div>
+
+
                         </div>
                     </div>
                 <?php } while ($rowofsell = mysqli_fetch_array($resultsell)) ?>

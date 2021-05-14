@@ -42,7 +42,7 @@ $productData = mysqli_query($conect, $sql);
                     <a href="adminPage.php" class="nav-link pr-3 ">จัดการสินค้า</a>
                 </li>
                 <li class="nav-item">
-                    <a href="adminPageOrder.php" class="nav-link pr-3 active">จัดการการขาย</a>
+                    <a href="adminPageOrder.php" class="nav-link pr-3 active">จัดการรายการสั่งซื้อ</a>
                 </li>
             </ul>
         </div>
@@ -68,34 +68,39 @@ $productData = mysqli_query($conect, $sql);
                 <?php endif ?>
             </div>
         </div>
-
-        <table class="table mb-5 mt-3">
-            <thead>
-                <tr>
-                    <th scope="col">ID</th>
-                    <th></th>
-                    <th scope="col">ชื่อสินค้า</th>
-                    <th scope="col">ยี่ห้อ</th>
-                    <th scope="col">ประเภท</th>
-                    <th scope="col">ราคาต่อชิ้น</th>
-                    <th scope="col">จำนวน</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php while ($rowProdict = mysqli_fetch_array($productData)) { ?>
+        <?php if (mysqli_num_rows($productData) > 0) : ?>
+            <table class="table mb-5 mt-3">
+                <thead>
                     <tr>
-                        <th scope="row"><?php echo $rowProdict['productid'] ?></th>
-                        <td><img src="../productPic/<?php echo $rowProdict['picture'] ?>" style="height: 50px;" alt=""></td>
-                        <td><?php echo $rowProdict['PDname'] ?></td>
-                        <td><?php echo $rowProdict['pdbrand'] ?></td>
-                        <td><?php echo $rowProdict['pdtype'] ?></td>
-                        <td><?php echo $rowProdict['price'] ?></td>
-                        <td><?php echo $rowProdict['count'] ?></td>
-                        <td><a href="editProduct.php?id=<?php echo $rowProdict['productid'] ?>" class="btn btn-warning">แก้ไข</a> <a href="delProduct.php?id=<?php echo $rowProdict['productid'] ?>" class="btn btn-danger" onClick="return confirm('Are you sure you want to delete?')">ลบ</a></td>
+                        <th scope="col">ID</th>
+                        <th></th>
+                        <th scope="col">ชื่อสินค้า</th>
+                        <th scope="col">ยี่ห้อ</th>
+                        <th scope="col">ประเภท</th>
+                        <th scope="col">ราคาต่อชิ้น</th>
+                        <th scope="col">จำนวน</th>
                     </tr>
-                <?php } ?>
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    <?php while ($rowProdict = mysqli_fetch_array($productData)) { ?>
+                        <tr>
+                            <th scope="row"><?php echo $rowProdict['productid'] ?></th>
+                            <td><img src="../productPic/<?php echo $rowProdict['picture'] ?>" style="height: 50px;" alt=""></td>
+                            <td><?php echo $rowProdict['PDname'] ?></td>
+                            <td><?php echo $rowProdict['pdbrand'] ?></td>
+                            <td><?php echo $rowProdict['pdtype'] ?></td>
+                            <td><?php echo $rowProdict['price'] ?></td>
+                            <td><?php echo $rowProdict['count'] ?></td>
+                            <td><a href="editProduct.php?id=<?php echo $rowProdict['productid'] ?>" class="btn btn-warning">แก้ไข</a> <a href="delProduct.php?id=<?php echo $rowProdict['productid'] ?>" class="btn btn-danger" onClick="return confirm('ต้องการที่จะลบสินค้าชิ้นนี้?')">ลบ</a></td>
+                        </tr>
+                    <?php } ?>
+                </tbody>
+            </table>
+        <?php else : ?>
+            <div class="d-flex justify-content-center mt-5">
+                <h1 class="text-secondary">ไม่พบสินค้า "<?php echo $seach ?>"</h1>
+            </div>
+        <?php endif ?>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
