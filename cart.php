@@ -39,7 +39,7 @@ if (!isset($_SESSION['username'])) {
                             $rowcart = mysqli_fetch_array($re);
                             $cartid = $rowcart['cartid'];
 
-                            $sqlcart = "SELECT * FROM cartINFO WHERE cartid=$cartid";
+                            $sqlcart = "SELECT * FROM cartinfo WHERE cartid=$cartid";
                             $re = mysqli_query($conect, $sqlcart);
                             $countcart = 0;
                             while ($rowcart = mysqli_fetch_array($re)) {
@@ -90,7 +90,7 @@ if (!isset($_SESSION['username'])) {
         ?>
             <?php $cartID = mysqli_fetch_array($cartID);
             $cartID = $cartID['cartid']; //get cartID of this user
-            $sql = "SELECT * FROM cartINFO WHERE cartid=$cartID";
+            $sql = "SELECT * FROM cartinfo WHERE cartid=$cartID";
             $cart = mysqli_query($conect, $sql); //get data in cartINFO 
             ?>
             <?php if (mysqli_num_rows($cart) > 0) : ?>
