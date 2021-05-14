@@ -278,21 +278,22 @@ $url .= $_SERVER['REQUEST_URI'];
                     </div>
                 </div>
                 <?php if ($rowofsell['status'] == "กำลังดำเนินการ") : ?>
-                    <div class="row border mb-5">
+                    <div class="row border ">
                         <div class="col-md-12 d-flex justify-content-center">
                             <form action="updateOrderStatus.php" method="get">
                                 <input type="hidden" value="<?php echo $url ?>" name="url">
                                 <input type="hidden" value="<?php echo $rowofsell['sellid'] ?>" name="success">
-                                <input type="submit" name="submit" value="จัดส่งสินค้ารายการนี้แล้ว" class="btn btn-success me-1">
+                                <input type="submit" name="submit" value="จัดส่งสินค้ารายการนี้แล้ว" class="btn btn-success me-1" onClick="return confirm('รายการสั่งซื้อนี้ดำเนินการเสร็จสิ้นแล้ว?')">
                             </form>
                             <form action="updateOrderStatus.php" method="get">
                                 <input type="hidden" value="<?php echo $url ?>" name="url">
                                 <input type="hidden" value="<?php echo $rowofsell['sellid'] ?>" name="cancel">
-                                <input type="submit" name="submit" value="ยกเลิกรายการสั่งซื้อนี้" class="btn btn-danger ms-1">
+                                <input type="submit" name="submit" value="ยกเลิกรายการสั่งซื้อนี้" class="btn btn-danger ms-1" onClick="return confirm('ต้องการที่จะยกเลิกรายการสั่งซื้อนี้?')">
                             </form>
                         </div>
                     </div>
                 <?php endif ?>
+                <div class="row mb-5"></div>
             <?php }  ?>
         <?php else : ?>
             <?php if (isset($search)) : ?>

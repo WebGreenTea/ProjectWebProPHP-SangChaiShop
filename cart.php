@@ -314,7 +314,6 @@ if (!isset($_SESSION['username'])) {
                 dataType: 'html',
                 async: false,
                 success: function(data) {
-                    alert(data);
                     sellid = data;
                     for (let i = 0; i < chekbox.length; i++) {
                         if (chekbox[i].checked) {
