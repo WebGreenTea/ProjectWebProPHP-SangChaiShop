@@ -4,9 +4,19 @@ include('../conectDB.php');
 if (!(isset($_SESSION['identity']) && $_SESSION['identity'] == "admin")) {
     header('location: ../index.php');
 }
-$sql = "SELECT product.productid,product.PDname,product.price,product.count,product.picture,product_brand.pdbrand,product_type.pdtype FROM product 
-INNER JOIN product_brand ON product.brandid=product_brand.brandid
-INNER JOIN product_type ON product.typeid=product_type.typeid";
+
+if (isset($_GET['seach'])) {
+    $seach = $_GET['seach'];
+    $sql = "SELECT product.productid,product.PDname,product.price,product.count,product.picture,product_brand.pdbrand,product_type.pdtype FROM product 
+    INNER JOIN product_brand ON product.brandid=product_brand.brandid
+    INNER JOIN product_type ON product.typeid=product_type.typeid WHERE product.PDname LIKE '%$seach%'";
+} else {
+    $sql = "SELECT product.productid,product.PDname,product.price,product.count,product.picture,product_brand.pdbrand,product_type.pdtype FROM product 
+    INNER JOIN product_brand ON product.brandid=product_brand.brandid
+    INNER JOIN product_type ON product.typeid=product_type.typeid";
+}
+
+
 $productData = mysqli_query($conect, $sql);
 
 ?>
@@ -41,17 +51,25 @@ $productData = mysqli_query($conect, $sql);
     <div class="container mb-5">
         <h2 class="mt-5 d-flex justify-content-center mb-4"> -- จัดการสินค้า -- </h2>
         <div class="row">
-            <div class="col-md-4">
-            เรียงตาม:
-            </div>
-            <div class="col-md-5">
-            </div>
-            <div class="col-md-3 d-flex justify-content-end">
+            <div class="col-md-3 d-flex justify-content-start">
                 <a href="addProductPage.php" class="btn btn-success">เพิ่มสินค้าใหม่ + </a>
             </div>
 
+            <div class="col-md-3">
+            </div>
+
+            <div class="col-md-6 d-flex justify-content-end">
+                <form class="d-flex" accept="" method="get">
+                    <input class="form-control me-2" type="search" placeholder="สิ้นค้าที่ต้องการหา" aria-label="Search" name="seach">
+                    <button class="btn btn-outline-success" type="submit">ค้นหา</button>
+                </form>
+                <?php if (isset($seach)) : ?>
+                    <a href="adminPage.php" class="ms-2 btn btn-secondary">แสดงสินค้าทั้งหมด</a>
+                <?php endif ?>
+            </div>
         </div>
-        <table class="table mb-5">
+
+        <table class="table mb-5 mt-3">
             <thead>
                 <tr>
                     <th scope="col">ID</th>

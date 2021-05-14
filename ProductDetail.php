@@ -58,8 +58,12 @@ $product =  mysqli_fetch_assoc($product);
                         </a>
 
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <li><a class="dropdown-item" href="userinfo/myaccount.php">บัญชีของฉัน</a></li>
-                            <li><a class="dropdown-item" href="vieworder/my_order.php">ประวัติการสั่งซื้อ</a></li>
+                        <li><a class="dropdown-item" href="order_history.php">ประวัติการสั่งซื้อ</a></li>
+                            <li><a class="dropdown-item" href="myaccountinfo.php">ตั้งค่าข้อมูลส่วนตัว</a></li>
+                            <li><a class="dropdown-item" href="changePassPage.php">เปลี่ยนรหัสผ่าน</a></li>
+                            <?php if (isset($_SESSION['identity']) && $_SESSION['identity'] == "admin") : ?>
+                                <li><a class="dropdown-item" href="adminPage/adminPage.php">เมนู ADMIN</a></li>
+                            <?php endif ?>
                             <li><a class="dropdown-item" href="index.php?logout='1'">Logout</a></li>
                         </ul>
                     </div>
@@ -116,10 +120,7 @@ $product =  mysqli_fetch_assoc($product);
             <textarea class="form-control" disabled rows="20"><?php echo $product['info'] ?></textarea>
         </div>
 
-        <div class="mt-5 bg-light border">
-            <?php $infourl = 'infoproduct/' . $product['info']; ?>
-            <object width="100%" height="700" type="text/plain" data="<?php echo $infourl ?>" border="0" style="overflow: hidden;"> </object>
-        </div>
+        
     </div>
 
 </body>

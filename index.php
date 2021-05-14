@@ -7,7 +7,13 @@ if (isset($_GET['logout'])) { //logout
     unset($_SESSION['userid']);
     header('location: index.php');
 }
-$sql = "SELECT `productid`, `PDname`, `price`, `count`,`picture` FROM `product`";
+if(isset($_GET['seach'])){
+    $seach = $_GET['seach'];
+    $sql = "SELECT `productid`, `PDname`, `price`, `count`,`picture` FROM `product` WHERE PDname LIKE '%$seach%'";
+}else{
+    $sql = "SELECT `productid`, `PDname`, `price`, `count`,`picture` FROM `product`";
+}
+
 if (isset($_GET['infoPD'])) {
     $sql = "SELECT * FROM `product` WHERE productid=" . $_GET['infoPD'];
 }
@@ -230,6 +236,10 @@ if ((isset($_GET['type'])) && (isset($_GET['brand']))) {
                         </ul>
                     </li>
                 </ul>
+                <form class="d-flex" accept="" method="get">
+                    <input class="form-control me-2" type="search" placeholder="สิ้นค้าที่ต้องการหา" aria-label="Search" name="seach">
+                    <button class="btn btn-outline-success" type="submit">ค้นหา</button>
+                </form>
             </div>
         </div>
     </nav>
@@ -238,6 +248,8 @@ if ((isset($_GET['type'])) && (isset($_GET['brand']))) {
     <div class="container-fulid mt-4">
         <div class="row">
             <?php $product = mysqli_query($conect, $sql); ?>
+            <?php 
+            if(mysqli_num_rows($product) > 0): ?>
             <?php while ($rowPD = mysqli_fetch_array($product)) { ?>
                 <?php $imgurl = 'productPic/' . $rowPD['picture']; ?>
                 <div class="col-lg-2">
@@ -259,6 +271,12 @@ if ((isset($_GET['type'])) && (isset($_GET['brand']))) {
                     </div>
                 </div>
             <?php } ?>
+            <?php else :?>
+                <div class="d-flex justify-content-center">
+                <h1 class="text-secondary">ไม่พบสินค้า "<?php echo $seach ?>"</h1>
+                </div>
+                
+            <?php endif?>
         </div>
 
     </div>

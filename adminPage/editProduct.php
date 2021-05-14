@@ -124,6 +124,7 @@ $type = mysqli_query($conect, $sql);
             <textarea class="form-control" id="info" rows="10" name="info" maxlength="8000"><?php echo $product['info'] ?></textarea>
 
             <div class="d-flex justify-content-center mt-2">
+            <input type="hidden" name="id" value="<?php echo $product['productid'] ?>">
                 <input type="submit" name="submit" class="btn btn-success" value="บันทึก">
             </div>
 

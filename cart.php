@@ -62,7 +62,7 @@ if (!isset($_SESSION['username'])) {
                     </a>
 
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <li><a class="dropdown-item" href="order_history.php">ประวัติการสั่งซื้อ</a></li>
+                        <li><a class="dropdown-item" href="order_history.php">ประวัติการสั่งซื้อ</a></li>
                         <li><a class="dropdown-item" href="myaccountinfo.php">ตั้งค่าข้อมูลส่วนตัว</a></li>
                         <li><a class="dropdown-item" href="changePassPage.php">เปลี่ยนรหัสผ่าน</a></li>
                         <li><a class="dropdown-item" href="index.php?logout='1'">Logout</a></li>
@@ -166,13 +166,13 @@ if (!isset($_SESSION['username'])) {
                 </div>
 
             <?php else : ?>
-                <div class="emcart">
-                    <p class="emcartP">ไม่มีสินค้าในรถเข็นของคุณ</p>
+                <div class="d-flex justify-content-center text-secondary">
+                    <h1 class="emcartP">ไม่มีสินค้าในรถเข็นของคุณ</h1>
                 </div>
             <?php endif ?>
         <?php else : ?>
-            <div class="emcart">
-                <p class="emcartP">ไม่มีสินค้าในรถเข็นของคุณ</p>
+            <div class="d-flex justify-content-center text-secondary">
+                <h1 class="emcartP">ไม่มีสินค้าในรถเข็นของคุณ</h1>
             </div>
         <?php endif ?>
     </div>
