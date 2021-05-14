@@ -6,6 +6,7 @@ if (!(isset($_SESSION['identity']) && $_SESSION['identity'] == "admin")) {
 }
 
 if (isset($_GET['submit'])) {
+    $url = $_GET['url'];
     if (isset($_GET['success'])) {
         $sellid = $_GET['success'];
         $sql = "UPDATE `sell` SET `status`='ส่งแล้ว' WHERE sellid=$sellid";
@@ -17,13 +18,12 @@ if (isset($_GET['submit'])) {
     }
     if (isset($_GET['show'])) {
         $show = $_GET['show'];
-        $location = "location: adminPageOrder.php?show=$show";
+        $location = "location: $url";
         header($location);
     }else{
-        header('location: adminPageOrder.php');
+        $location = "location: $url";
+        header($location);
     }
 }else{
-    header('location: adminPageOrder.php');
+    header('location: adminPageOrder.php?');
 }
-
-?>

@@ -8,7 +8,7 @@ $sql = "UPDATE cartinfo SET count=$count WHERE cartid=$cartID AND productid=$PDi
 mysqli_query($conect,$sql);
 
 //call totol of product in cart of this user
-$sql = "SELECT * FROM cartINFO WHERE cartid=$cartID";
+$sql = "SELECT * FROM cartinfo WHERE cartid=$cartID";
 $result = mysqli_query($conect,$sql);
 $totol = 0;
 while($rowfinal = mysqli_fetch_array($result)){

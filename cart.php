@@ -307,25 +307,28 @@ if (!isset($_SESSION['username'])) {
 
         var scripturl = "savesell/savesell.php?userid=" + "<?php echo $_SESSION['userid'] ?>";
         var sellid;
-        $.ajax({
-            url: scripturl,
-            type: 'get',
-            dataType: 'html',
-            async: false,
-            success: function(data) {
-                sellid = data;
-                for (let i = 0; i < chekbox.length; i++) {
-                    if (chekbox[i].checked) {
-                        $.post("savesell/savesellinfo.php", {
-                            idsell: sellid,
-                            pdid: document.getElementById("pdid" + i).alt,
-                            count: document.getElementById("count" + i).value
-                        });
+        $(document).ready(function() {
+            $.ajax({
+                url: scripturl,
+                type: 'get',
+                dataType: 'html',
+                async: false,
+                success: function(data) {
+                    alert(data);
+                    sellid = data;
+                    for (let i = 0; i < chekbox.length; i++) {
+                        if (chekbox[i].checked) {
+                            $.post("savesell/savesellinfo.php", {
+                                idsell: sellid,
+                                pdid: document.getElementById("pdid" + i).alt,
+                                count: document.getElementById("count" + i).value
+                            });
 
+                        }
                     }
                 }
-            }
-        })
+            })
+        });
         //remove product ordered from cart
         var idcart;
         $(document).ready(function() {

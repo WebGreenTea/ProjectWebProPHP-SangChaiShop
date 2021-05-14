@@ -23,7 +23,7 @@ if (isset($_GET['search'])) {
     } else {
         $sql = "SELECT * FROM sell";
     }
-    if (isset($_GET['orderby'])) {
+    if (isset($_GET['orderby']) && $_GET['orderby']) {
         $sql .= " ORDER BY sellid DESC";
     }
 }
@@ -278,19 +278,15 @@ $url .= $_SERVER['REQUEST_URI'];
                     </div>
                 </div>
                 <?php if ($rowofsell['status'] == "กำลังดำเนินการ") : ?>
-                    <div class="row border">
+                    <div class="row border mb-5">
                         <div class="col-md-12 d-flex justify-content-center">
                             <form action="updateOrderStatus.php" method="get">
-                                <?php if (isset($show)) : ?>
-                                    <input type="hidden" name="show" value="<?php echo $show ?>">
-                                <?php endif ?>
+                                <input type="hidden" value="<?php echo $url ?>" name="url">
                                 <input type="hidden" value="<?php echo $rowofsell['sellid'] ?>" name="success">
                                 <input type="submit" name="submit" value="จัดส่งสินค้ารายการนี้แล้ว" class="btn btn-success me-1">
                             </form>
                             <form action="updateOrderStatus.php" method="get">
-                                <?php if (isset($show)) : ?>
-                                    <input type="hidden" name="show" value="<?php echo $show ?>">
-                                <?php endif ?>
+                                <input type="hidden" value="<?php echo $url ?>" name="url">
                                 <input type="hidden" value="<?php echo $rowofsell['sellid'] ?>" name="cancel">
                                 <input type="submit" name="submit" value="ยกเลิกรายการสั่งซื้อนี้" class="btn btn-danger ms-1">
                             </form>

@@ -39,7 +39,7 @@ if (isset($_SESSION['success'])) {
                             $rowcart = mysqli_fetch_array($re);
                             $cartid = $rowcart['cartid'];
 
-                            $sqlcart = "SELECT * FROM cartINFO WHERE cartid=$cartid";
+                            $sqlcart = "SELECT * FROM cartinfo WHERE cartid=$cartid";
                             $re = mysqli_query($conect, $sqlcart);
                             $countcart = 0;
                             while ($rowcart = mysqli_fetch_array($re)) {

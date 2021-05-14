@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 14, 2021 at 08:26 PM
+-- Generation Time: May 14, 2021 at 11:21 PM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 8.0.6
 
@@ -208,7 +208,7 @@ INSERT INTO `product_type` (`typeid`, `pdtype`) VALUES
 CREATE TABLE `sell` (
   `sellid` int(3) NOT NULL,
   `userid` int(5) NOT NULL,
-  `date` varchar(8) NOT NULL,
+  `date` varchar(10) NOT NULL,
   `status` varchar(20) DEFAULT NULL,
   `address` varchar(300) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -218,11 +218,11 @@ CREATE TABLE `sell` (
 --
 
 INSERT INTO `sell` (`sellid`, `userid`, `date`, `status`, `address`) VALUES
-(61, 38, '14/05/20', 'ส่งแล้ว', '88/9999\r\n9999'),
-(62, 38, '14/05/20', 'กำลังดำเนินการ', '88/9999\r\n9999'),
-(63, 38, '14/05/20', 'กำลังดำเนินการ', '88/9999\r\n9999'),
-(64, 38, '14/05/20', 'รายการนี้ถูกยกเลิก', '88/9999\r\n9999'),
-(65, 37, '14/05/20', 'กำลังดำเนินการ', '376/8\r\nหน้าเมือง');
+(61, 38, '14/05/2021', 'ส่งแล้ว', '88/9999\r\n9999'),
+(62, 38, '14/05/2021', 'กำลังดำเนินการ', '88/9999\r\n9999'),
+(63, 38, '14/05/2021', 'กำลังดำเนินการ', '88/9999\r\n9999'),
+(64, 38, '14/05/2021', 'รายการนี้ถูกยกเลิก', '88/9999\r\n9999'),
+(65, 37, '14/05/2021', 'กำลังดำเนินการ', '376/8\r\nหน้าเมือง');
 
 -- --------------------------------------------------------
 
@@ -281,7 +281,7 @@ INSERT INTO `user_data` (`userid`, `username`, `name`, `lastname`, `gender`, `ad
 (34, 'Pacha', 'ปองพล', 'ดีดำ', 'ชาย', 'บ้านเลข6 ต.ดอนหวาย อ.เมือง จ.นครปฐม ', 'suppanut2543@gmail.com', 685432110, 'e10adc3949ba59abbe56e057f20f883e', NULL),
 (35, 'test2', 'สหวุฒิ', 'บุญยืน', 'ชาย', '376/8 ต.หน้าเมือง', 'wgtwgtwgt1@gmail.com', 892471815, '81dc9bdb52d04dc20036dbd8313ed055', NULL),
 (37, 'WebGreenTea', 'Sahawut ', 'Boonyurn', 'ชาย', '376/8\r\nหน้าเมือง', 'sahawut092013@gmail.com', 892471815, '598d73db04f61bb1170469ba2b8163fd', NULL),
-(38, 'admin', 'admin', 'man', 'อื่นๆ', '88/9999\r\n9999', 'admin@gmail.com', 999999999, '598d73db04f61bb1170469ba2b8163fd', 'admin');
+(38, 'admin', 'admin', 'man', 'อื่นๆ', '88/9999\r\n9999', 'admin@gmail.com', 999999999, '25f9e794323b453885f5181f1b624d0b', 'admin');
 
 --
 -- Indexes for dumped tables
